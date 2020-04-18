@@ -1,0 +1,16 @@
+.nav{
+    width:100vw;
+    height:10vh;
+    background-color:pink;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition:.15s ease-in;
+}
+.page-content{
+    padding-top:300vh;
+}
