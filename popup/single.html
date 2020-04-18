@@ -1,25 +1,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Popup</title>
-    <link rel="stylesheet" href="split-style.css">
+    <title>Single Popup</title>
+    <link rel="stylesheet" href="single-style.css">
 </head>
 <body>
     <a class="erase-button" onclick="eraseCookies()">Erase Cookies</a>
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <div class="modal-body">
                 <span class="close">&times;</span>
-                    <div class="left-side">
+                    <div class="inner">
                         <p class="heading">Heading Text</p>
                         <p class="subheading">Subheading Text</p><p class="final-text">Bold Subheading Text</p>
                         <a href="#"><button onclick="handleButtonClick()" class="modal-button">Button 1</button></a>
                     </div>
-                    <div class="right-side">
-                        <p class="heading">Heading Text</p>
-                        <p class="subheading">Subheading Text</p><p class="final-text">Bold Subheading Text</p>
-                        <a href="##"><button onclick="handleButtonClick()" class="modal-button">Button 2</button></a>
-                    </div>
-            </div>
         </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
