@@ -1,0 +1,26 @@
+.box{
+    transition:.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity:.3;
+    height:50vh;
+    width:50vw;
+    transform:translateX(-50vw);
+}
+.box-right{
+    transition:.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity:.3;
+    height:50vh;
+    width:50vw;
+    float:right;
+    transform:translateX(50vw);
+}
+.top{
+    height:50vh;
+    width:100%;
+}
+.container{
+    display:flex;
+    overflow-x: hidden;
+    padding:0 10vw;
+    margin-top:5vh;
+}
+

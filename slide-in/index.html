@@ -1,0 +1,96 @@
+<head>
+  <title>Slide In Scroll</title>
+  <link rel=stylesheet href="./styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="top">
+  </div>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+var randomColor1 = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+  var randomColor2 = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+    var randomColor3 = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+
+  document.querySelector('.top').style.backgroundColor = randomColor3;
+
+  let newBox = document.createElement('div');
+  newBox.style.backgroundColor = randomColor1;
+  newBox.classList.add('box');
+  
+
+  let newRightBox = document.createElement('div');
+  newRightBox.style.backgroundColor = randomColor2;
+  newRightBox.classList.add('box-right');
+  
+
+  let newContainer = document.createElement('div');
+  newContainer.classList.add('container');
+
+  newContainer.appendChild(newBox);
+  newContainer.appendChild(newRightBox);
+
+  document.body.appendChild(newContainer);
+  const isElementXPercentInViewport = function (el, percentVisible) {
+    let
+      rect = el.getBoundingClientRect(),
+      windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+    return !(
+      Math.floor(100 - (((rect.top >= 0 ? 0 : rect.top) / +-(rect.height / 1)) * 100)) < percentVisible ||
+      Math.floor(100 - ((rect.bottom - windowHeight) / rect.height) * 100) < percentVisible
+    )
+  };
+  function getDistY() {
+    return document.documentElement.scrollTop || window.pageYOffset;
+  }
+  window.onscroll = function (ev) {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 300)) {
+      var randomColor1 = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+  var randomColor2 = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+      
+      let newBox = document.createElement('div');
+      newBox.style.backgroundColor = randomColor1;
+      newBox.classList.add('box');
+      
+
+      let newRightBox = document.createElement('div');
+      newRightBox.style.backgroundColor = randomColor2;
+      newRightBox.classList.add('box-right');
+      
+
+      let newContainer = document.createElement('div');
+      newContainer.classList.add('container');
+
+      newContainer.appendChild(newBox);
+      newContainer.appendChild(newRightBox);
+      document.body.appendChild(newContainer);
+    }
+  };
+  window.addEventListener("scroll", () => {
+    const distanceY = getDistY();
+    let boxes = document.querySelectorAll('.box');
+    let rightBoxes = document.querySelectorAll('.box-right');
+
+    boxes.forEach((box) => {
+      if (isElementXPercentInViewport(box, 80)) {
+        box.style.transform = 'translateX(-5vw)';
+        box.style.opacity = '1';
+      }
+    })
+    rightBoxes.forEach((rightBox) => {
+      if (isElementXPercentInViewport(rightBox, 80)) {
+        rightBox.style.transform = 'translateX(5vw)';
+        rightBox.style.opacity = '1';
+      }
+    })
+
+  });
+</script>
