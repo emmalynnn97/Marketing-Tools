@@ -1,5 +1,10 @@
+//Number of days to set a cookie
 const numDays = 1;
-const initialDelay=2000;
+//Initial amount of time in ms before the popup becomes visible
+const initialDelay = 2000;
+//A toggle for the cookie functionality of the popup
+const hasCookies = false;
+
 //utility function to erase a single cookie
 function eraseCookie(name) {
     setCookie(name, "", -1);
@@ -42,28 +47,34 @@ function checkCookie() {
 function handleButtonClick() {
     setCookie("username", "user", numDays)
 }
-// Get the modal
-var modal = document.getElementById("myModal");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user loads the page, open the modal
-window.onload =  () => {
+// Get the modal
+const modal = document.querySelector("#myModal");
+
+// Get the <span> element that closes the modal
+const closeBtn = document.querySelector(".close");
+
+//Add an event listener to the window which waits initialDelay ms before triggering the modal
+window.addEventListener('load', () => {
     if (!checkCookie()) {
         setTimeout(function () {
             modal.style.display = "block";
         }, initialDelay);
     }
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = () => {
+})
+//Add an event listener to the close button which closes the modal on click
+closeBtn.addEventListener('click', () => {
     modal.style.display = "none";
-    setCookie("username", "user", numDays) //set cookie for 30 days on close
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick =  (event) => {
+    if (hasCookies) {
+        setCookie("username", "user", numDays) //set cookie for 30 days on close
+    }
+})
+//Add an event listener to the modal which closes the modal on a click outside of the modal
+window.addEventListener('click', (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
-        setCookie("username", "user", numDays) //set cookies on close
+        if (hasCookies) {
+            setCookie("username", "user", numDays) //set cookies on close
+        }
     }
-}
+})
