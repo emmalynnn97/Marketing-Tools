@@ -4,12 +4,14 @@
 body{
     margin:0;
     padding:0;
+    
 }
 .slider-dot-container{
     position:relative;
-    top:75%;
-    left:45vw;
+    width:100%;
+    justify-content: center;
     display:flex;
+    top:-10vh;
 }
 .slider-dot{
     background-color:gray;
@@ -25,9 +27,10 @@ body{
 }
 .slider-container{
     height:75vh;
-    width:100vw;
+    width:100%;
     background-size:cover;
     background-position: center;
+    overflow-x:hidden;
 }
 .slider-overlay{
     background-color:rgba(0,0,0,.6);

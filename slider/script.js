@@ -14,10 +14,12 @@ const slides = [
         image:'./slider-bg-4.jpg'
     }
 ]
+//Dynamically generate a dot for each slide, and make the first dot the active one by default
 for(var k = 0; k < slides.length;k++){
     var newDot = document.createElement('div');
     if(k == 0){
         newDot.classList.add('slider-dot-active');
+        newDot.classList.add('slider-dot');
     }
     else{
         newDot.classList.add('slider-dot');
@@ -32,17 +34,28 @@ sliderContainer.style.backgroundImage=`url("${slides[0].image}")`
 sliderBtnLeft.addEventListener('click',()=>{
     //Only cycle the slide backwards by 1 space if i is positive
     if(i > 0){
-        sliderDotContainer.children[i].style.backgroundColor='gray'
+        //Make current dot inactive by removing active class from it
+        sliderDotContainer.children[i].classList.remove('slider-dot-active')
+        
         i = (i - 1) % slides.length;
-        sliderDotContainer.children[i].style.backgroundColor='white'
+        //Make next dot active by adding the active class to it
+        sliderDotContainer.children[i].classList.add('slider-dot-active')
+        
+        //Move to previous slide
         sliderContainer.style.backgroundImage=`url("${slides[i].image}")`
     }
 })
 
 //Have right button wait until click, on click cycle the slide forwards by 1 space
 sliderBtnRight.addEventListener('click',()=>{
-    sliderDotContainer.children[i].style.backgroundColor='gray'
+   //Make current dot inactive by removing active class from it
+    sliderDotContainer.children[i].classList.remove('slider-dot-active')
+    
     i = (i + 1) % slides.length;
-    sliderDotContainer.children[i].style.backgroundColor='white'
+    
+    //Make next dot active by adding the active class to it
+    sliderDotContainer.children[i].classList.add('slider-dot-active')
+    
+    //Advance Slide
     sliderContainer.style.backgroundImage=`url("${slides[i].image}")` 
 })
