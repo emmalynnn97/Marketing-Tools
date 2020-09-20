@@ -8,17 +8,28 @@ const sliders = [
     },
     {
         image:'./slider-bg-2.jpg'
+    },
+    {
+        image:'./slider-bg-3.jpg'
+    },
+    {
+        image:'./slider-bg-4.jpg'
     }
 ]
 
+//Set default image as first one in array
 var i = 0;
 sliderContainer.style.backgroundImage=`url("${sliders[0].image}")`
 
+
+
 sliderBtnRight.addEventListener('click',()=>{
-    sliderContainer.style.backgroundImage=`url("${sliders[Math.abs((i + 1)%sliders.length)].image}")`
-    i++
+    i = (i + 1) % sliders.length;
+    sliderContainer.style.backgroundImage=`url("${sliders[i].image}")` 
 })
 sliderBtnLeft.addEventListener('click',()=>{
-    sliderContainer.style.backgroundImage=`url("${sliders[Math.abs((i - 1)%sliders.length)].image}")`
-    i--;
+    if(i > 0){
+        i = (i - 1) % sliders.length;
+        sliderContainer.style.backgroundImage=`url("${sliders[i].image}")`
+    }
 })

@@ -5,6 +5,19 @@ body{
     margin:0;
     padding:0;
 }
+.slider-dot-container{
+    position:relative;
+    top:75%;
+    left:45vw;
+    display:flex;
+}
+.slider-dot{
+    margin:0 .15em;
+    height:15px;
+    width:15px;
+    border-radius:50%;
+    background-color:white;
+}
 .slider-container{
     height:75vh;
     width:100vw;
