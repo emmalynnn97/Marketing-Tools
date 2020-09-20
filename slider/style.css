@@ -6,8 +6,28 @@ body{
     padding:0;
 }
 .slider-container{
-    min-height:75vh;
+    height:75vh;
+    width:100vw;
     background-image:url("./slider-bg-2.jpg");
     background-size:cover;
     background-position: center;
+}
+.slider-overlay{
+    background-color:rgba(0,0,0,.6);
+    height:100%;
+    width:100%;
+}
+.slider-btn{
+    position:absolute;
+    top:calc(75vh / 2);
+    color:white;
+    border:2px solid white;
+    padding:.5em 1em;
+    cursor:pointer;
+}
+.slider-btn-left{
+    left:2em;
+}
+.slider-btn-right{
+    right:2em;
 }
