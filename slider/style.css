@@ -12,11 +12,16 @@ body{
     display:flex;
 }
 .slider-dot{
+    background-color:gray;
+}
+.slider-dot-active{
+    background-color:white;
+}
+.slider-dot,.slider-dot-active{
     margin:0 .15em;
     height:15px;
     width:15px;
     border-radius:50%;
-    background-color:white;
 }
 .slider-container{
     height:75vh;
