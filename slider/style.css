@@ -15,6 +15,7 @@ body{
 }
 .slider-dot{
     background-color:gray;
+    cursor:pointer;
 }
 .slider-dot-active{
     background-color:white;
