@@ -3,8 +3,10 @@
 }
 body{
     margin:0;
-    padding:0;
-    
+    padding:0; 
+}
+h1{
+    margin:0;
 }
 .slider-dot-container{
     position:relative;
@@ -15,7 +17,6 @@ body{
 }
 .slider-dot{
     background-color:gray;
-    cursor:pointer;
 }
 .slider-dot-active{
     background-color:white;
@@ -51,4 +52,12 @@ body{
 }
 .slider-btn-right{
     right:2em;
+}
+.slider-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100%;
+    color:white;
 }
