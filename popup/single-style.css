@@ -20,19 +20,15 @@
     /* Black w/ opacity */
 }
 /* Styling for various text elements */
-h1{
+.heading{
     color:black;
     letter-spacing:1.5px;
-    font-size:28px;
-    font-weight:500;
-    text-align:center;
+    font-size:3em;
+    font-weight:700;
+    text-align:left;
 }
-h2{
-    color:black;
-    letter-spacing:1.5px;
-    font-size:24px;
-    font-weight:500;
-    text-align:center;
+.heading{
+    margin:.25em auto;
 }
 /* Styling for close button */
 .close {
@@ -61,11 +57,13 @@ h2{
 }
 /* Styling for button */
 .modal-button {
-    background:linear-gradient(150deg,white, pink);
+    background:black;
     outline:none;
-    border: 2px solid gray;
-    font-size: 20px;
-    padding:5px 25px;
+    border:none;
+    color:#E4C841;
+    text-transform:uppercase;
+    font-size: 16px;
+    padding:5px 15px;
     transition: .25s ease;
 }
 /* Styling for button on hover */
@@ -80,21 +78,24 @@ cursor: pointer;
 .modal-content {
     position: relative;
     margin: 7% auto;
-    height: 50%;
-    width: 50%;
+    height: 35%;
+    width: 65%;
     animation-name: animatetop;
     animation-duration: .75s;
+    background-image:url("https://athome.dickeys.com/wp-content/uploads/2020/08/DAH-Caoursel-new-items-blank.png");
+    background-size:cover;
+    background-position:center;
 }
 /* Inner Modal Content Styling */
 .inner {
-background-color:rgb(255, 255, 255);
-height:80%;
+background-color:rgb(249, 219, 72, .9);
+height:100%;
 width:100%;
 float:left;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:flex-start;
 }
 /* Add Animation */
 @keyframes animatetop {
@@ -104,30 +105,35 @@ justify-content:center;
 @media (max-width: 1024px) {
 /* Selectors and styles affecting screens UP TO 1024px (Large Tablet/Desktop) */
     .heading{
-        font-size:36px;
+        font-size:2.75em;
     }
-    .subheading,.final-text,.modal-button{
-        font-size:34px;
+    .modal-button{
+        font-size:1.25em;
     }
 }
 @media (max-width: 768px) {
 /* Selectors and styles affecting screens UP TO 768px (Small Tablet) */
-    .heading{
-        font-size:28px;
+.modal-content{
+    width:75%;
+    height:25%;
+}    
+.heading{
+        font-size:2.5em;
     }
-    .subheading,.final-text,.modal-button{
-        font-size:26px;
+    .modal-button{
+        font-size:1em;
     }
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 500px) {
 /* Selectors and styles affecting screens UP TO 480px (Phone) */
-    .heading,.modal-button{
-        font-size:18px;
-    }
-    .subheading,.final-text{
-        font-size:16px;
+.modal-content{
+    width:90%;
+}
+.heading{
+        font-size:2em;
     }
     .modal-button{
         padding:5px 20px;
+        font-size:.75em;
     }
 }
